@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  fastapi:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - fastapi-data:/app/app/data
+    container_name: fastapi-app
+
+volumes:
+  fastapi-data:
+    name: fastapi-data
